@@ -1,4 +1,3 @@
-# coding=utf-8
 # Autor: Tomas Burrieza
 # Proyecto: Mercado Libre S.R.L - Backend Challenge "Morse"
 # Fecha: Abril, 2019.
@@ -28,6 +27,6 @@ if  __name__ == '__main__':
     elif type == "mor":
         result = MorseClass.translate2Human(string)
     else:
-        assert False, "No se ha ingresado un metodo de conversion soportado. Utilice -t [bin] o [mor] "
+        assert False, "No se ha ingresado un metodo de conversion soportado. Utilice -t [bin] o [mor]. Ejemplo: python3 main.py -t mor -s '. .. ...'"
 
     print(result)
