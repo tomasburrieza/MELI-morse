@@ -13,6 +13,8 @@ No es necesario instalar ninguna dependencia.
 
 # api.py
 
+- RECIBE REQUEST SIENDO UNA API RESTFUL
+
 * Convierte texto humano a codigo morse
 * Convierte código morse a humano.
 
