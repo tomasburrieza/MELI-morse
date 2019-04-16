@@ -69,6 +69,7 @@ class Morse():
         self.reverse_morse_dict = {morse: char for char, morse in self.morse_dict.items()}
 
     def translate2Human(self, morse):
+        assert self.ismor(morse), "El texto ingresado no es morse puro."
         morse_pulses_master = morse.split("  ")
         human_text = ""
 
@@ -83,6 +84,8 @@ class Morse():
         return human_text
 
     def decodeBits2Morse(self, bits):
+        assert self.isbin(bits), "El texto ingresado no es binario puro."
+
         decoded_bits = ""  # variable para almacenar los bits decodificados
         self.avg = self.getPulseAverage(bits)  # promedio para evaluar el tipo de pulso (corto o largo)
         pulses = (re.findall('(0+|1+)', bits))  # array de bits separados entre 0 y 1 por órden de aparición
@@ -118,15 +121,12 @@ class Morse():
             else:
                 return PulseType.longCero
 
-<<<<<<< HEAD
     def isbin(self, string):
         return set(string) <= set('01')
 
     def ismor(self, string):
         return set(string) <= set('.- ')
 
-=======
->>>>>>> b400ab75cea8bc48f7ad594d61b35527dcff14c4
     def getPulseAverage(self, bits):
         ceropulses = (re.findall('(0+)', bits))
 
@@ -168,8 +168,4 @@ class Morse():
             morse_text += " "
 
         return morse_text
-<<<<<<< HEAD
 
-
-=======
->>>>>>> b400ab75cea8bc48f7ad594d61b35527dcff14c4
