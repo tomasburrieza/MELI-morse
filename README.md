@@ -22,6 +22,5 @@ Dependencias:
 
 * Flask: + 1.0.x
 * Flask-restful: + 0.3.7
-* json
 
 
