@@ -1,6 +1,7 @@
 # Morse Package
 # Contiene todas las funciones utiles para la transformación de información a Morse o viceversa.
 
+#regEx
 import re
 
 

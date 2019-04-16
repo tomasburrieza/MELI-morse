@@ -12,22 +12,34 @@ api = Api(application)
 
 
 class Morse2Text(Resource):
-    def get(self, morse_string):
+    def post(self):
+        json = request.get_json(force=True)
+        morse_string = json['text']
+        print(morse_string)
+
         morse = Morse()
         result = {'response': morse.translate2Human(morse_string), "code": 200}
-        return result
+        return result,200
 
 
 class Text2Morse(Resource):
-    def get(self, text_string):
+    def post(self):
+
+        json = request.get_json(force=True)
+        print(json)
+        text_string = json['text']
+        print(text_string)
+
+        print(request)
+        print(text_string)
 
         morse = Morse()
         result = {'response': morse.human2morse(text_string.upper()), "code": 200}
-        return result
+        return result, 200
 
 
-api.add_resource(Morse2Text, '/translate/2text/<morse_string>')
-api.add_resource(Text2Morse, '/translate/2morse/<text_string>')
+api.add_resource(Morse2Text, '/translate/2text')
+api.add_resource(Text2Morse, '/translate/2morse')
 
 if __name__ == '__main__':
     application.run(port='8840', debug=True)
