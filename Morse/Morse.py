@@ -118,12 +118,15 @@ class Morse():
             else:
                 return PulseType.longCero
 
+<<<<<<< HEAD
     def isbin(self, string):
         return set(string) <= set('01')
 
     def ismor(self, string):
         return set(string) <= set('.- ')
 
+=======
+>>>>>>> b400ab75cea8bc48f7ad594d61b35527dcff14c4
     def getPulseAverage(self, bits):
         ceropulses = (re.findall('(0+)', bits))
 
@@ -165,5 +168,8 @@ class Morse():
             morse_text += " "
 
         return morse_text
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> b400ab75cea8bc48f7ad594d61b35527dcff14c4
