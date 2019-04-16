@@ -19,7 +19,7 @@ class Morse2Text(Resource):
 
         morse = Morse()
         result = {'response': morse.translate2Human(morse_string), "code": 200}
-        return result,200
+        return result, 200
 
 
 class Text2Morse(Resource):
@@ -42,4 +42,4 @@ api.add_resource(Morse2Text, '/translate/2text')
 api.add_resource(Text2Morse, '/translate/2morse')
 
 if __name__ == '__main__':
-    application.run(port='8840', debug=True)
+    application.run(port='8840', debug=False)

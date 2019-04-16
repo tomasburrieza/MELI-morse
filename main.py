@@ -5,6 +5,8 @@
 
 from Morse.Morse import *
 
+# modificar las variables para obtener diferentes resultados.
+
 test = "111110011111100000111000000100111110010011000011001100"
 test_morse = "-- . .-.. .."
 
@@ -27,3 +29,6 @@ print("RESULTADO:  {}".format(MorseClass.translate2Human(morse_code)))
 print("\n\n")
 
 print("Gracias por utilizar el conversor :)")
+
+
+
