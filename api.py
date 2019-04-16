@@ -42,4 +42,4 @@ api.add_resource(Morse2Text, '/translate/2text')
 api.add_resource(Text2Morse, '/translate/2morse')
 
 if __name__ == '__main__':
-    application.run(port='8840', debug=False)
+    application.run(port='80', host="0.0.0.0", debug=False)
