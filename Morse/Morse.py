@@ -157,6 +157,10 @@ class Morse():
         palabras = text.split(" ")
         morse_text = ""
 
+        pattern = re.compile("^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$")
+        assert pattern.match(text), "El texto ingresado contiene caracteres invalidos."
+
+
         for p in palabras:
             for i in range(len(p)):
                 char = self.reverse_morse_dict.get(p[i]) or ""
