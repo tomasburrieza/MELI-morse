@@ -1,6 +1,9 @@
 # MELI-morse
 Challenge Backend Mercado Libre
 
+Dependencias base:
+ * python 3.6+
+
 # main.py
 Convierte un string en morse a texto humano.
 Converte binario a código morse.
