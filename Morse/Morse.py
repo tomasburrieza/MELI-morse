@@ -1,11 +1,11 @@
 # Morse Package
 # Contiene todas las funciones utiles para la transformación de información a Morse o viceversa.
 
-#regEx
+# regEx
 import re
 
 
-class MorseAVG():
+class MorseAVG:
     def __init__(self):
         self.mincero = 0
         self.maxcero = 0
@@ -22,7 +22,7 @@ class PulseType:
     end = 4
 
 
-class Morse():
+class Morse:
     def __init__(self):
         self.avg = MorseAVG()
         self.morse_dict = {
@@ -63,7 +63,7 @@ class Morse():
             "---..": "8",
             "----.": "9",
             ".-.-.-": ".",
-            " ": " "  # espacio si hay más de una palabra siempre es espacio.
+            " ": " "
         }
 
         self.reverse_morse_dict = {morse: char for char, morse in self.morse_dict.items()}
@@ -75,8 +75,7 @@ class Morse():
 
         for morse_pulses in morse_pulses_master:
             for pulse in morse_pulses.split(" "):
-                char = self.morse_dict.get(pulse) or ""
-
+                char = self.morse_dict.get(pulse) or ""  # buscamos la equivalencia del caracter morse
                 human_text += char
 
             human_text += " "
@@ -91,7 +90,7 @@ class Morse():
         pulses = (re.findall('(0+|1+)', bits))  # array de bits separados entre 0 y 1 por órden de aparición
 
         for p in pulses:
-            eval = self.evaluate(p)
+            eval = self.evaluate(p)  # evaluo si el pulso es corto o largo
             if eval == PulseType.shortOne:
                 decoded_bits += "."
             elif eval == PulseType.longOne:
@@ -101,7 +100,7 @@ class Morse():
             elif eval == PulseType.shortCero:
                 decoded_bits += ""
             elif eval == PulseType.end:
-                decoded_bits += ""
+                decoded_bits += ""  # caracter que se muestra al final del mensaje.
 
         return decoded_bits
 
@@ -122,9 +121,11 @@ class Morse():
                 return PulseType.longCero
 
     def isbin(self, string):
+        # comprueba si el string es binario puro
         return set(string) <= set('01')
 
     def ismor(self, string):
+        # comprueba si el string es morse puro
         return set(string) <= set('.- ')
 
     def getPulseAverage(self, bits):
@@ -154,22 +155,18 @@ class Morse():
         return ret_morse_avg
 
     def human2morse(self, text):
-        palabras = text.split(" ")
-        morse_text = ""
-
-        pattern = re.compile("^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$")
+        pattern = re.compile("^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$")  # buscamos unicamente caracteres validos.
         assert pattern.match(text), "El texto ingresado contiene caracteres invalidos."
 
+        palabras = text.split(" ")
+        morse_text = ""
 
         for p in palabras:
             for i in range(len(p)):
                 char = self.reverse_morse_dict.get(p[i]) or ""
-
                 morse_text += char
-
                 morse_text += " "
 
             morse_text += " "
 
         return morse_text
-
