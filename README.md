@@ -41,3 +41,26 @@ Convierte código morse a humano.
 * Transformar morse a texto (separar palabras por doble espacio)
 
   * Mediante cURL: curl -X POST "http://35.230.95.39/translate/2text" -d '{"text": ".... --- .-.. .- -- . .-.. .."}'
+  
+- Ejemplo de uso
+
+input
+
+```JSON
+{"text": ".... --- .-.. .-  -- . .-.. .."}
+```
+
+output
+```JSON
+{
+    "response": "HOLA MELI ",
+    "code": 200
+}
+```
+
+# Notas
+ * En caso de ingresar un caracter NO valido dentro de los esperados, se disparará un Exception. En caso de estar siendo ejecutado desde la API devolverá un Bad Request (Error 400).
+ 
+ * Se utiliza como fin de mensaje una pausa prolongada.
+ 
+
