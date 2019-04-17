@@ -9,8 +9,9 @@ No es necesario instalar ninguna dependencia.
 * Forma de uso:
 Parametros para la ejeción
 
--t: tipo de lenguaje de input. Valores admitidos: [mor]: morse | [bin]: binario
--s: string a convertir. Valores admitidos: [0,1] en caso de seleccionar binario. | [A-Z a-z 0-9] en caso de seleccionar texto.
+ * -t: tipo de lenguaje de input. Valores admitidos: [mor]: morse | [bin]: binario
+ * -s: string a convertir. Valores admitidos: [0,1] en caso de seleccionar binario. | [A-Z a-z 0-9] en caso de seleccionar texto.
+ 
 Ejemplo: python3 main.py -t bin -s "000110000011111001000"
 
 Ejemplo: python3 main.py -t mor -s ".... --- .-.. .- -- . .-.. .."
