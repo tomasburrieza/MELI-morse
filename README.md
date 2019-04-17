@@ -23,7 +23,9 @@ Ejemplo: python3 main.py -t mor -s ".... --- .-.. .- -- . .-.. .."
 
 # api.py
 RECIBE REQUEST SIENDO UNA API RESTFUL
+
 Convierte texto humano a codigo morse
+
 Convierte código morse a humano.
 
 * Dependencias:
